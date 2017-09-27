@@ -45,27 +45,27 @@ $("body").on("click", ".reset-button", function(event){
 //what happens when no answer is chosen? 
 function noChoiceNoScore() {
 	noChoice++;
-	gameHTML = "<p class='text-center timer-p'><span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswerArray[questionCounter] + "</p>";
+	gameHTML = "<p class='text-center timer-p'><span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  " + correctAnswerArray[questionCounter] + "</p>";
 	$(".mainArea").html(gameHTML);
 	setTimeout(wait, 2000);  //  pause between questions
 }
 //what happens when correct answer is chosen? 
 function addPoint() {
 	correctAnswer++;
-	gameHTML = "<p class='text-center timer-p'><span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + correctAnswerArray[questionCounter] + "</p>";
+	gameHTML = "<p class='text-center timer-p'><span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! " + correctAnswerArray[questionCounter] + "</p>";
 	$(".mainArea").html(gameHTML);
-	setTimeout(wait, 2000);  //  pause between questions
+	setTimeout(wait, 3000);  //  pause between questions
 }
 //what happens when wrong answer is chosen? 
 function noPoint() {
 	wrongAnswer++;
-	gameHTML = "<p class='text-center timer-p'><span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswerArray[questionCounter] + "</p>";
+	gameHTML = "<p class='text-center timer-p'><span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong!  "+ correctAnswerArray[questionCounter] + "</p>";
 	$(".mainArea").html(gameHTML);
-	setTimeout(wait, 2000); //  pause between questions
+	setTimeout(wait, 5000); //  pause between questions
 }
 
 function insertHTML() {
-	gameHTML = "<p class='text-center timer-p'><span class='timer'>5</span></p><p class='text-center'>" + questionsArray[questionCounter] + "</p><p class='first-answer answer'>A. " + choicesArray[questionCounter][0] + "</p><p class='answer'>B. "+choicesArray[questionCounter][1]+"</p><p class='answer'>C. "+choicesArray[questionCounter][2]+"</p><p class='answer'>D. "+choicesArray[questionCounter][3]+"</p>";
+	gameHTML = "<p class='text-center timer-p'><span class='timer'>15</span></p><p class='text-center'>" + questionsArray[questionCounter] + "</p><p class='first-answer answer'>A. " + choicesArray[questionCounter][0] + "</p><p class='answer'>B. "+choicesArray[questionCounter][1]+"</p><p class='answer'>C. "+choicesArray[questionCounter][2]+"</p><p class='answer'>D. "+choicesArray[questionCounter][3]+"</p>";
 	$(".mainArea").html(gameHTML);
 }
 //countdown for each questions
@@ -89,10 +89,10 @@ function endOfGame() {
 }
 //pause between questions
 function wait() {
-	if (questionCounter < 5) {
+	if (questionCounter < 15) {
 	questionCounter++;
 	insertHTML();
-	counter = 5;
+	counter = 15;
 	timer();
 	}
 	else {
@@ -115,15 +115,15 @@ var startScreen;
 //undefined variable to document game HTML
 var gameHTML;
 //timer to count down from 
-var counter = 5;
+var counter = 15;
 //undefined variable for timer
 var theClock;
 //create questions
-var questionsArray = ["The beaver is the national emblem of which country?",  "What is it illegal to duel with in Massachusetts?", "Fifteen percent of women do what on Valentine’s Day?"];
+var questionsArray = ["Which beer was the first to win a blue ribbon at the Chicago World's Fair in 1893?",  "What was/were the main ingredients listed in the original text of the Reinheitsgebot?", "Which beer was invented during a brewer's strike in the 1930s from a recipe tossed together by the untrained workers left behind to run the brewery?"];
 //create answers
-var correctAnswerArray = ["Canada", "Water Pistols", "Send themselves Flowers"];
+var correctAnswerArray = ["Pabst Blue Ribbon - AKA. PBR", "All of the Above - Yeast wasn't mentioned for another 35 years", "Michelob - It was so bad local taverns tossed their delivered barrels in the gutter until the streets ran with beer. When the strike was over, the brewery didn't want to lose all that beer, no matter how bad, so they repackaged it and sold it as Michelob."];
 //create choices
-var choicesArray = [["Canada", "USA", "Denmark", "Greenland"],["Pocket Knives", "Light Sabers", "Cucumbers", "Water Pistols"], ["Watch Ellen Degeneres", "Send themselves chocolate", "Send themselves flowers", "Go on blind dates"]];
+var choicesArray = [["Pabst Blue Ribbon", "Four Star Pils", "Goose Island Beer", "Coors Banquet"],["Barley", "Hops", "Water", "All of the Above"], ["Miller", "Michelob", "LaBatte Blue", "Budweiser"]];
 //variable to switch from question to next question
 var questionCounter = 0;
 //undefined variable for TBD
