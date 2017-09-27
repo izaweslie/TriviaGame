@@ -2,6 +2,7 @@
 	background-color: #F2EFE4;
 	color: #030640;
 	border-color: #F2EFE4;
+	margin-top: 15px;
 }
 body {
 	background-color: #F2EFE4;
@@ -18,15 +19,25 @@ span.timer {
 	font-size: 40px;
 }
 p.text-center{
-	color: #F2C6A0
+	color: #F2C6A0;
+	font-style: bold;
+	font-size: 25px;
+	padding-bottom: 15px;
 }
 p.answer{
 	background-color: #F2EFE4;
 	color: #030640;
 	border-color: #F2EFE4;
-	border-radius: 25px;
+	border-radius: 10px;
 	text-align: center;
-	padding: 10px, 16px, 10px, 16px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-style: bold;
+}
+p.answer:hover {
+	color: #F2EFE4;
+	background-color: #730F06;
+	border-color: #730F06;
 }
 .btn-primary:hover {
 	color: #F2EFE4;
